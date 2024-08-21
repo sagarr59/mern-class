@@ -6,6 +6,8 @@ import Home from "./components/Home";
 import Cards from "./components/Cards";
 import AboutUs from "./components/AboutUs";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import BlogState from "./context/blogs/BlogState";
+import Footer from "./components/Footer";
 
 function App() {
   const apiKey = import.meta.env.VITE_API_KEY;
@@ -40,15 +42,18 @@ function App() {
 
   return (
     <>
-      <Router>
-        <Navbar mode={mode} text={text} toggleMode={toggleMode} />
-        <Alert alert={alert} showAlert={showAlert} />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/blogs" element={<Cards apiKey={apiKey} />} />
-          <Route path="/aboutUs" element={<AboutUs />} />
-        </Routes>
-      </Router>
+      <BlogState apiKey={apiKey}>
+        <Router>
+          <Navbar mode={mode} text={text} toggleMode={toggleMode} />
+          <Alert alert={alert} showAlert={showAlert} />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/blogs" element={<Cards apiKey={apiKey} />} />
+            <Route path="/aboutUs" element={<AboutUs />} />
+          </Routes>
+          <Footer/>
+        </Router>
+      </BlogState>
     </>
   );
 }
