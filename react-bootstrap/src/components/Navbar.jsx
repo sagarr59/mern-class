@@ -1,23 +1,47 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = (props) => {
-    return (
-        <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
-            <div className="container-fluid">
-                <a className="navbar-brand" href="#">Navbar</a>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li className="nav-item">
-                            <Link className="nav-link active" aria-current="page" to="/">Home</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/blogs">Blogs</Link>
-                        </li>
-                        <li className="nav-item dropdown">
+  return (
+    <nav
+      className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode} fixed-top`}
+    >
+      <div className="container-fluid">
+        <a className="navbar-brand fw-bold fs-3 " href="#">
+          NEWS <span style={{ color: "#007bff" }}>Portal</span>
+        </a>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <Link className="nav-link active" aria-current="page" to="/">
+                Home
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link className="nav-link" to="/blogs">
+                Blogs
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link className="nav-link" to="/aboutUs">
+                About Us
+              </Link>
+            </li>
+
+            {/* <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Dropdown
                             </a>
@@ -30,17 +54,19 @@ const Navbar = (props) => {
                         </li>
                         <li className="nav-item">
                             <a className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true">Disabled</a>
-                        </li>
-                    </ul>
-                    {/* <form className="d-flex">
+                        </li> */}
+          </ul>
+          {/* <form className="d-flex">
                         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                         <button className="btn btn-outline-success" type="submit">Search</button>
                     </form> */}
-                    <button className='btn btn-primary' onClick={props.toggleMode}>{props.text}</button>
-                </div>
-            </div>
-        </nav>
-    )
-}
+          <button className="btn btn-primary" onClick={props.toggleMode}>
+            {props.text}
+          </button>
+        </div>
+      </div>
+    </nav>
+  );
+};
 
-export default Navbar
+export default Navbar;

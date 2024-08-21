@@ -21,7 +21,7 @@ const Cards = (props) => {
         <div className='container'>
             <h4 className='service-heading my-3'>Our News</h4>
             <div className='row'>
-                {article && article.slice(0 ,3).map((e) => {
+                {article && article.slice(0 ,16).map((e) => {
                     console.log(e.title);
                     
 
