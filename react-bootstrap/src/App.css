@@ -1,0 +1,26 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.container-flex {
+  flex: 1;
+}
+
+footer {
+  margin-top: auto;
+  padding: 1rem 0;
+  background-color: #343a40;
+  color: white;
+}
+
+
+.service-heading{
+  text-align: center;
+}

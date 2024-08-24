@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { FaShoppingCart } from "react-icons/fa";
+import blogContext from "../context/blogs/BlogContext";
 
 const Navbar = (props) => {
+  const context = useContext(blogContext);
+  const {
+    state: { cart },
+  } = context;
+
   return (
     <nav
-      className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode} fixed-top`}
+      className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode} `}
     >
       <div className="container-fluid">
         <a className="navbar-brand fw-bold fs-3 " href="#">
@@ -40,6 +47,14 @@ const Navbar = (props) => {
                 About Us
               </Link>
             </li>
+
+            <button type="button" className="btn btn-primary position-relative">
+              <FaShoppingCart />
+              <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                {cart.length}
+                <span className="visually-hidden">unread messages</span>
+              </span>
+            </button>
 
             {/* <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

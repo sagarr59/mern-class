@@ -45,6 +45,7 @@ export default function Form() {
 
   return (
     <>
+    <div className='p-3'>
       <input
         value={state.name}
         onChange={handleInputChange}
@@ -56,6 +57,7 @@ export default function Form() {
         Decrement age
       </button>
       <p>Hello, {state.name}. You are {state.age}.</p>
+      </div>
     </>
   );
 }
