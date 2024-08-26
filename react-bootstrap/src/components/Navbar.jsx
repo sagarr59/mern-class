@@ -48,13 +48,19 @@ const Navbar = (props) => {
               </Link>
             </li>
 
-            <button type="button" className="btn btn-primary position-relative">
-              <FaShoppingCart />
-              <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                {cart.length}
-                <span className="visually-hidden">unread messages</span>
-              </span>
-            </button>
+            <Link to="/cartitems">
+              {" "}
+              <button
+                type="button"
+                className="btn btn-primary position-relative"
+              >
+                <FaShoppingCart />
+                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  {cart.length}
+                  <span className="visually-hidden">unread messages</span>
+                </span>
+              </button>
+            </Link>
 
             {/* <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

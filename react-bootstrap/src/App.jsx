@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import BlogState from "./context/blogs/BlogState";
 import Footer from "./components/Footer";
 import Form from "./components/Reduce";
+import CartItems from "./components/CartItems";
 
 function App() {
   const apiKey = import.meta.env.VITE_API_KEY;
@@ -52,6 +53,7 @@ function App() {
             <Route path="/blogs" element={<Cards apiKey={apiKey} />} />
             <Route path="/aboutUs" element={<AboutUs />} />
             <Route path="/reduce" element={<Form />} />
+            <Route path="/cartitems" element={<CartItems />} />
           </Routes>
           <Footer />
         </Router>

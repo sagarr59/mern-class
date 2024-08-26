@@ -8,12 +8,14 @@ const BlogState = (props) => {
       title: "Laptop",
       description: "ASUS laptop",
       price: 120000,
+      instock: 5,
     },
     {
       id: "112as",
       title: "Mobile",
       description: "Realme phone",
       price: 30000,
+      instock: 4,
     },
   ];
 
