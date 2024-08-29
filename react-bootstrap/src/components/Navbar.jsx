@@ -8,14 +8,13 @@ const Navbar = (props) => {
   const {
     state: { cart },
   } = context;
-
   return (
     <nav
-      className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode} `}
+      className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}
     >
       <div className="container-fluid">
-        <a className="navbar-brand fw-bold fs-3 " href="#">
-          NEWS <span style={{ color: "#007bff" }}>Portal</span>
+        <a className="navbar-brand" href="#">
+          Navbar
         </a>
         <button
           className="navbar-toggler"
@@ -35,21 +34,23 @@ const Navbar = (props) => {
                 Home
               </Link>
             </li>
-
             <li className="nav-item">
               <Link className="nav-link" to="/blogs">
                 Blogs
               </Link>
             </li>
-
             <li className="nav-item">
               <Link className="nav-link" to="/aboutUs">
                 About Us
               </Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/login">
+                Login
+              </Link>
+            </li>
 
-            <Link to="/cartitems">
-              {" "}
+            <Link to="./cartitems">
               <button
                 type="button"
                 className="btn btn-primary position-relative"
@@ -61,22 +62,8 @@ const Navbar = (props) => {
                 </span>
               </button>
             </Link>
-
-            {/* <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown
-                            </a>
-                            <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a className="dropdown-item" href="#">Action</a></li>
-                                <li><a className="dropdown-item" href="#">Another action</a></li>
-                                <li><hr className="dropdown-divider" /></li>
-                                <li><a className="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true">Disabled</a>
-                        </li> */}
           </ul>
+
           {/* <form className="d-flex">
                         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                         <button className="btn btn-outline-success" type="submit">Search</button>
