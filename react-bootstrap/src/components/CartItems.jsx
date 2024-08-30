@@ -25,10 +25,10 @@ const CartItems = () => {
                   />
                 </div>
                 <div className="col-md-2">
-                  <h4>Name: {prod.title}</h4>
+                  <h4> {prod.title}</h4>
                 </div>
                 <div className="col-md-2">
-                  <h4>Price: {prod.price}</h4>
+                  <h4>Price(Rs): {prod.price}</h4>
                 </div>
                 <div className="col-md-2">
                   <select

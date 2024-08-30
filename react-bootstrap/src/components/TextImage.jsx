@@ -7,7 +7,7 @@ const TextImage = () => {
       <div className="row align-items-center">
         {/* Text Column */}
         <div className="col-md-6">
-          <h2 className="display-3 fw-bold mb-4 text-primary">About Us</h2>
+          <h2 className="display-3 fw-bold mb-4 text-dark">About Us</h2>
           <p className="fs-4 text-muted text-justify">
             At Retro Jerseys, we specialize in offering a selection of iconic
             football shirts that embody the spirit and history of the game.
