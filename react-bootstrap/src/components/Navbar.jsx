@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart, FaSun, FaMoon } from "react-icons/fa";
 import blogContext from "../context/blogs/BlogContext";
 
 const Navbar = (props) => {
@@ -8,13 +8,13 @@ const Navbar = (props) => {
   const {
     state: { cart },
   } = context;
+
   return (
-    <nav
-      className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}
-    >
+    <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          Navbar
+          <span style={{ color: '#f39c12', fontWeight: 'bold' }}>RETRO</span>
+          <span style={{ color: '#3498db', fontWeight: 'bold' }}> JERSEYS</span>
         </a>
         <button
           className="navbar-toggler"
@@ -35,8 +35,8 @@ const Navbar = (props) => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/blogs">
-                Blogs
+              <Link className="nav-link" to="/products">
+                Products
               </Link>
             </li>
             <li className="nav-item">
@@ -45,32 +45,38 @@ const Navbar = (props) => {
               </Link>
             </li>
             <li className="nav-item">
+              <Link className="nav-link" to="/contactUs">
+                Contact Us
+              </Link>
+            </li>
+          </ul>
+          {/* Right-aligned items */}
+          <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li className="nav-item">
               <Link className="nav-link" to="/login">
                 Login
               </Link>
             </li>
-
-            <Link to="./cartitems">
-              <button
-                type="button"
-                className="btn btn-primary position-relative"
-              >
-                <FaShoppingCart />
-                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                  {cart.length}
-                  <span className="visually-hidden">unread messages</span>
-                </span>
+            <li className="nav-item">
+              <Link className="nav-link" to="/cartitems">
+                <button
+                  type="button"
+                  className="btn btn-primary position-relative"
+                >
+                  <FaShoppingCart />
+                  <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    {cart.length}
+                    <span className="visually-hidden">unread messages</span>
+                  </span>
+                </button>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <button className="btn btn-primary" onClick={props.toggleMode}>
+                {props.mode === "light" ? <FaMoon /> : <FaSun />}
               </button>
-            </Link>
+            </li>
           </ul>
-
-          {/* <form className="d-flex">
-                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button className="btn btn-outline-success" type="submit">Search</button>
-                    </form> */}
-          <button className="btn btn-primary" onClick={props.toggleMode}>
-            {props.text}
-          </button>
         </div>
       </div>
     </nav>

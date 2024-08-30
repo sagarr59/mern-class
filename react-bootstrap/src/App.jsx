@@ -5,6 +5,7 @@ import Alert from "./components/Alert";
 import Home from "./components/Home";
 import Cards from "./components/Cards";
 import AboutUs from "./components/AboutUs";
+import ContactUs from "./components/ContactUs"; // Import the new component
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import BlogState from "./context/blogs/BlogState";
 import Footer from "./components/Footer";
@@ -17,7 +18,6 @@ function App() {
   const apiKey = import.meta.env.VITE_API_KEY;
   console.log("API Key:", apiKey);
 
-  // Set default mode to dark
   const [mode, setMode] = useState("dark");
   const [text, setButtonText] = useState("Enable Light");
   const [alert, setAlert] = useState(null);
@@ -52,8 +52,9 @@ function App() {
           <Alert alert={alert} showAlert={showAlert} />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/blogs" element={<Cards apiKey={apiKey} />} />
+            <Route path="/products" element={<Cards apiKey={apiKey} />} />
             <Route path="/aboutUs" element={<AboutUs />} />
+            <Route path="/contactUs" element={<ContactUs />} /> {/* Add new route */}
             <Route path="/reduce" element={<Form />} />
             <Route path="/cartitems" element={<CartItems />} />
             <Route path="/login" element={<Login />} />

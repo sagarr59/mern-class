@@ -6,11 +6,12 @@ const Signup = () => {
         name: "",
         email: "",
         password: "",
+        phone:"",
         location: "",
     });
 
     const handleSubmit = () => {
-        console.log("hllllooooooo");
+        console.log("hi");
     };
     const handleChange = (e) => {
         setCredential({ ...credential, [e.target.name]: e.target.value });
@@ -26,7 +27,7 @@ const Signup = () => {
                         className="form-control" value={credential.name} onChange={handleChange} name='name'
                         id="exampleInputEmail1"
                         aria-describedby="emailHelp"
-                        placeholder="Enter email"
+                        placeholder="Enter your Name"
                     ></input>
                 </div>
                 <div className="form-group">
@@ -35,7 +36,7 @@ const Signup = () => {
                         type="Email"
                         className="form-control" value={credential.email} onChange={handleChange} name='email'
                         id="exampleInputPassword1"
-                        placeholder="Password"
+                        placeholder="Email Address"
                     ></input>
                 </div>
                 <div className="form-group" value={credential.password} onChange={handleChange} name='password'>
@@ -47,13 +48,24 @@ const Signup = () => {
                         placeholder="Password"
                     ></input>
                 </div>
+
+                <div className="form-group">
+                    <label for="phone">Phone</label>
+                    <input
+                        type="phone"
+                        className="form-control"
+                        id="exampleInputPassword1"
+                        placeholder="Phone Number"
+                    ></input>
+                </div>
+
                 <div className="form-group">
                     <label for="location">Location</label>
                     <input
                         type="location"
                         className="form-control"
                         id="exampleInputPassword1"
-                        placeholder="Password"
+                        placeholder="Your Location"
                     ></input>
                 </div>
 

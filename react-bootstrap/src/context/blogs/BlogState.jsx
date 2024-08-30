@@ -1,21 +1,26 @@
-import { useReducer, useState } from "react";
+import React, { useReducer, useState } from "react";
 import blogContext from "./BlogContext";
 import { cartReducer } from "../Reducers";
+import j1 from "../../assets/jerseys/j1.png";
+import j2 from "../../assets/jerseys/j2.png";
+
 const BlogState = (props) => {
   const products = [
     {
       id: "111as",
-      title: "Laptop",
-      description: "ASUS laptop",
-      price: 120000,
+      title: "Real Madrid:Teka",
+      description: "A classic retro football shirt featuring the iconic Real Madrid Teka sponsor",
+      price: 2500,
       instock: 5,
+      image: j1, // Use imported image
     },
     {
       id: "112as",
-      title: "Mobile",
-      description: "Realme phone",
-      price: 30000,
+      title: "Arsenal: O2",
+      description: "Vintage Arsenal O2- jersey ",
+      price: 1800,
       instock: 4,
+      image: j2, // Use imported image
     },
   ];
 
@@ -24,20 +29,11 @@ const BlogState = (props) => {
     cart: [],
   });
 
-  // const [article, setArticle] = useState([]);
-
-  // const fetchData = async () => {
-  //   let url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${props.apiKey}`;
-  //   let data = await fetch(url);
-  //   let parseData = await data.json();
-  //   console.log(parseData);
-  //   setArticle(parseData.articles);
-  // };
-
   return (
     <blogContext.Provider value={{ state, dispatch }}>
       {props.children}
     </blogContext.Provider>
   );
 };
+
 export default BlogState;
