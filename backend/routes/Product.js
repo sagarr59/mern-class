@@ -4,6 +4,7 @@ const fetchuser = require("../middleware/Fetchuser");
 const router = express.Router();
 const { body, validationResult } = require("express-validator");
 
+//fetch all products by single user
 router.get("/getallproduct", fetchuser, async (req, res) => {
   try {
     const products = await Product.find({ user: req.user.id });
@@ -45,7 +46,7 @@ router.post(
 );
 
 //update product
-router.put('/updateproduct/:id', fetchuser, async (req, res) => {
+router.put("/updateproduct/:id", fetchuser, async (req, res) => {
   const { title, description, price, instock } = req.body;
 
   try {
@@ -82,4 +83,21 @@ router.put('/updateproduct/:id', fetchuser, async (req, res) => {
   }
 });
 
+//deleting product
+router.delete("/deleteproduct/:id", fetchuser, async (req, res) => {
+  try {
+    let = product = await Product.findById(req.params.id);
+    if (!product) {
+      return res.status(404).send("product not found");
+    }
+    if (product.user.toString() !== req.user.id) {
+      return res.status(401).send("not allowed");
+    }
+
+    product = await Product.findByIdAndDelete(req.params.id);
+    res.json({ success: "product has been deleted", product: product });
+  } catch (error) {
+    res.status(500).send("internal server error");
+  }
+});
 module.exports = router;
