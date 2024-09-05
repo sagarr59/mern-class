@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import blogContext from "../context/blogs/BlogContext";
 import { MdDelete } from "react-icons/md";
+import esewaLogo from "../assets/esewa.png";
 
 const CartItems = () => {
   const context = useContext(blogContext);
@@ -73,6 +74,14 @@ const CartItems = () => {
       <div className="filter summary">
         <div className="title">Total items: ({cart.length})</div>
         <h4>Total: {Total}</h4>
+        <button className="btn btn-success mt-3 mb-5">
+          <img
+            src={esewaLogo}
+            alt="eSewa"
+            style={{ width: "30px", marginRight: "10px" }}
+          />
+          Order Now
+        </button>
       </div>
     </div>
   );

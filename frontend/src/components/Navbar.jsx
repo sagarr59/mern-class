@@ -10,11 +10,13 @@ const Navbar = (props) => {
   } = context;
 
   return (
-    <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
+    <nav
+      className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}
+    >
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          <span style={{ color: '#f39c12', fontWeight: 'bold' }}>RETRO</span>
-          <span style={{ color: '#3498db', fontWeight: 'bold' }}> JERSEYS</span>
+          <span style={{ color: "#f39c12", fontWeight: "bold" }}>RETRO</span>
+          <span style={{ color: "#3498db", fontWeight: "bold" }}> JERSEYS</span>
         </a>
         <button
           className="navbar-toggler"
@@ -30,7 +32,7 @@ const Navbar = (props) => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/">
+              <Link className="nav-link" aria-current="page" to="/">
                 Home
               </Link>
             </li>

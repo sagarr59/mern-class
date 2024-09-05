@@ -11,8 +11,8 @@ const Cards = () => {
   return (
     <div className="container">
       <h4 className="fs-3 fw-bold bg-dark text-white text-center p-3 my-3">
-  FEATURED PRODUCTS
-</h4>
+        FEATURED PRODUCTS
+      </h4>
 
       <div className="row">
         {products &&
