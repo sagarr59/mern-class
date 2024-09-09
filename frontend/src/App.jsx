@@ -54,11 +54,15 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Cards apiKey={apiKey} />} />
             <Route path="/aboutUs" element={<AboutUs />} />
-            <Route path="/contactUs" element={<ContactUs />} /> {/* Add new route */}
+            <Route path="/contactUs" element={<ContactUs />} />{" "}
+            {/* Add new route */}
             <Route path="/reduce" element={<Form />} />
             <Route path="/cartitems" element={<CartItems />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
+            <Route
+              path="/signup"
+              element={<Signup alert={alert} showAlert={showAlert} />}
+            />
           </Routes>
           <Footer />
         </Router>

@@ -1,4 +1,5 @@
 const express = require("express");
+var cors = require("cors");
 const dbConnect = require("./db");
 const app = express();
 dbConnect();
@@ -6,6 +7,7 @@ dbConnect();
 //get post update delete--CRUD
 
 const port = 5000;
+app.use(cors());
 app.use(express.json());
 app.get("/", (req, res) => {
   res.send("hello sagar");
